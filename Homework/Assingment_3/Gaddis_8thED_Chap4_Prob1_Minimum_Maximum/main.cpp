@@ -41,7 +41,8 @@ int main(int argc, char** argv) {
         cout << "Your numbers are equal. Please run the program again with two"
                 " different values.";
     else //find larger number. and display results.
-        cout << "The larger number is: " << (Num1 > Num2 ? Num1 : Num2);    
+        cout << "The larger number is: " << (Num1 > Num2 ? Num1 : Num2) 
+             << "\nThe smaller number is: " << (Num1 < Num2 ? Num1 : Num2);
     
     
     
