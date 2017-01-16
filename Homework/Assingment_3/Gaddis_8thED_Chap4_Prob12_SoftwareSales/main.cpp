@@ -15,22 +15,22 @@
 
 //System Libraries
 #include <iostream>
-#include <iomanip>
+#include <iomanip> //for setprecision, fixed.
 using namespace std;
 
 //User Libraries
 
 //Global Constants
-float const Unit_Cost = 99.00; 
+float const Unit_Cost = 99.00; //unit cost.
 
 //Function Prototypes
 
 //Executable code begins here!!!
 int main(int argc, char** argv) {
     //Declare Variables
-    int   Number_Purchased;
-    float Cost_Units_Purchased,
-          Total_Cost;
+    int   Number_Purchased; //holds number purchased input by user.
+    float Cost_Units_Purchased; //holds value for cost of all units purchased.
+           
           
     
     //Input values
@@ -41,13 +41,16 @@ int main(int argc, char** argv) {
     cin  >> Number_Purchased;
     
     //Process by mapping inputs to outputs
+    //find cost of units purchased.
     Cost_Units_Purchased = Number_Purchased * Unit_Cost;
     
     //Output values
-    cout << setprecision(2) << fixed;
-    if (Number_Purchased < 1)
+    cout << setprecision(2) << fixed; //display two decimal points.
+    if (Number_Purchased < 1) //validated greater than zero.
         cout << "You must purchase a minimum of 1 unit. Please restart the\n"
                 "program to make a purchase.";
+        /*select option based on number entered. find total cost and display to
+          user*/
         else if (Number_Purchased < 10)
             cout << "Total cost is: $" << Cost_Units_Purchased;
         else if (Number_Purchased >= 10 && Number_Purchased <= 19)
