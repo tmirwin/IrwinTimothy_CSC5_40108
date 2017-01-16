@@ -26,7 +26,8 @@ float const Unit_Cost = 99.00; //unit cost.
 //Function Prototypes
 
 //Executable code begins here!!!
-int main(int argc, char** argv) {
+int main(int argc, char** argv) 
+{
     //Declare Variables
     int   Number_Purchased; //holds number purchased input by user.
     float Cost_Units_Purchased; //holds value for cost of all units purchased.
@@ -34,11 +35,12 @@ int main(int argc, char** argv) {
           
     
     //Input values
+    // intro for user.
     cout << "This program informs you of the total cost of your software\n"
             "purchase after qualifying discounts (based on number of units\n"
             "purchased) are applied.\n\n";
     cout << "Enter the number of units you will purchase: ";
-    cin  >> Number_Purchased;
+    cin  >> Number_Purchased; //get units to purchase.
     
     //Process by mapping inputs to outputs
     //find cost of units purchased.
