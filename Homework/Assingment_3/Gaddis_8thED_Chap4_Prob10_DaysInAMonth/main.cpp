@@ -28,29 +28,31 @@ using namespace std;
 int main(int argc, char** argv)
 {
     //Declare Variables
-    unsigned short  Feb,
-                    Year,
-                    Month;
+    unsigned short  Year, //holds Year input value.
+                    Month; //holds Month input value.
     
     //Input values
-    cout << "To find out the number of days in a specific month, enter the \n"
+    //Intro for user.
+    cout << "To find the number of days in a specific month, enter the \n"
             "month and the year when prompted.\n\n";
-    
-    cout << "Enter a month (1-12): ";
+    //Get month and year.
+    cout << "Enter a month (1-12): "; 
     cin  >> Month;
     cout << "Enter a year: ";
     cin  >> Year;
     
     //Process by mapping inputs to outputs
     //Output values
-    if (Month < 1 || Month > 12)
+    if (Month < 1 || Month > 12) //Validate month entered.
+        // display month entered failed if not 1-12.
         cout << Month << " is not a valid month. Start the program over and"
                          " enter a month between 1 and 12: ";
     
-        switch (Month)
-    {
+        switch (Month) 
+    {   //display result to user. 
         case 1: cout << "31 Days.";
         break;
+        //evaluate if Feb will have 28 or 29 days.
         case 2: if (Year % 100 == 0 && Year % 400 == 0)
                     cout << "29 Days.";
                 else if (Year % 100 != 0 && Year % 4 == 0)
