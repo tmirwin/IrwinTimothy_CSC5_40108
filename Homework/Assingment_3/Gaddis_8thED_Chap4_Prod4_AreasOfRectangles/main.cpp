@@ -26,11 +26,11 @@ int main(int argc, char** argv)
 {
     //Declare Variables
     int Rec1L, //holds rectangle 1 length.
-        Rec1W, //holds rectangle 1 length.
-        Rec2L, //holds rectangle 1 length.
-        Rec2W, //holds rectangle 1 length.
-        Area1,
-        Area2;
+        Rec1W, //holds rectangle 1 width.
+        Rec2L, //holds rectangle 2 length.
+        Rec2W, //holds rectangle 2 width.
+        Area1, //holds rect. 1 area value.
+        Area2; //holds rect. 2 area value.
     
     //Input values
     //user intro.
