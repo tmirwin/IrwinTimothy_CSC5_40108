@@ -28,9 +28,9 @@ using namespace std;
 //User Libraries
 
 //Global Constants
-float const Air = 1100,
-            Water = 4900,
-            Steel = 16400;
+float const Air = 1100, //feet traveled per second.
+            Water = 4900,//feet traveled per second.
+            Steel = 16400;//feet traveled per second.
 
 //Function Prototypes
 
@@ -38,17 +38,20 @@ float const Air = 1100,
 int main(int argc, char** argv)
 {
     //Declare Variables
-    int  Num,
-         Feet;
+    int  Num, // holds value for menu selection.
+         Feet; // holds value for feet entered. 
     
     //Input values
+    //Intro and instructions
     cout << "Select one of the following menu numbers to find the amount of\n"
             "time it will take sound to travel inside your chosen medium.\n";
     cout << "1) Air\n"
             "2) Water\n"
             "3) Steel\n";
+    //get menu number.
     cin  >> Num;
     cout << "Enter a distance in feet: ";
+    //get feet traveled.
     cin  >> Feet;           
     cout << endl;
     
@@ -56,16 +59,20 @@ int main(int argc, char** argv)
     
     
     //Output values
+    //set to four decimal places.
     cout << setprecision(4) << fixed;
+    //verify menu number selected.
     if (Num < 1 || Num > 3)
         cout << Num << " is not a valid choice. Restart the program and enter\n"
                 "a listed menu choice.";
+        //verify distance greater than zero.
         else if (Feet <= 0)
             cout << "Distance cannot be zero or less. Restart the program and\n"
                 "enter a feet value greater than zero.";
-        else 
+        else
             switch (Num)
     {
+            //calculate and display results for selected choice.
             case 1: cout << "It will take sound " << Feet / Air << " seconds\n"
                             "to travel " << Feet << " feet through air."; 
             break;
