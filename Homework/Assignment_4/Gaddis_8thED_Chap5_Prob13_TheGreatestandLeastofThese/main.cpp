@@ -1,7 +1,7 @@
 /* 
 
   File:   main.cpp
-  Author: Dr. Mark E. Lehr
+  Author: Timothy Irwin
   Created on January 19, 2017, 10:03 PM
 
   Purpose: Write a program with a loop that lets the user enter a series of 
@@ -30,9 +30,9 @@ using namespace std;
 int main(int argc, char** argv)
 {
     //Declare Variables
-    int Num;    //holds integer input.
-    int Large;  //holds largest integer.
-    int Small;  //holds smallest integer.
+    int Num = 0;    //holds integer input.
+    int Large = 0;  //holds largest integer.
+    int Small = 0;  //holds smallest integer.
     
     //Intro with instructions.
     cout << "Enter as many integers a you like. After you enter your last\n"

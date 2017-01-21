@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 {
     //Declare Variables
     int UsrNum, //holds number entered by user.
-        Sum; //holds sum of incremented numbers.
+        Sum = 0; //holds sum of incremented numbers.
     
     //Input values
     cout << "This program provides the sum of all\n"

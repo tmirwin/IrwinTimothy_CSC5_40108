@@ -32,7 +32,7 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare Variables
     int     Days_W; //days worked (user entry).
-    float   DP = 0.01,//initialize daily pay rate
+    float   DP = 0.01f,//initialize daily pay rate
             TotalP; //total pay.
     
     //Input values
@@ -54,24 +54,22 @@ int main(int argc, char** argv) {
           
     //set number display format
     cout << setprecision(2) << showpoint << fixed;
-    //set up chart label   
+    //set up chart title   
     cout << "Day(s)" << "\t\t" << "Daily Salary" << endl;
     cout << "---------------------------------------------------------------\n";
     
     //loop for days worked counter.
     for(int Count = 1; Count <= Days_W; Count++)
 	{
-        //display daily pay. 
-	cout << Count << "\t\t$" << TotalP << endl;
-        
-        TotalP *= 2; //doubles rate daily.
-        
+         
+	DP *= 2; //doubles rate daily.
+        cout << Count << "\t\t$" << setw(6) << DP << endl;
         TotalP += DP; //total Salary = total pay + daily pay.
         }
     
     //Output values
     cout << "---------------------------------------------------------------\n";
-    cout << "Total salary:   $" << TotalP << endl; //total salary displayed
+    cout << "Total salary:   $" << setw(6) << TotalP << endl; //total salary displayed
     
     //Exit stage right!
     return 0;

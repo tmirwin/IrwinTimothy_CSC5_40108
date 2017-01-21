@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
     //Declare Variables
     const int   MONTH = 12;    //months per year = 12.
     
-    int         Years = 0;     //holds years input by user.
+    int         Years;     //holds years input by user.
     int         MonthT;        //holds total months (Years * MONTH)            
     float       Inches = 0.0f; //holds inches of rain input by user.
     float       InchesT = 0.0f;//holds running total for inches.
