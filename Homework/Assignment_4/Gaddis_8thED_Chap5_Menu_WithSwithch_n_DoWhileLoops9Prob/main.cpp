@@ -403,32 +403,38 @@ int main(int argc, char** argv) {
                 the largest and the smallest numbers entered.
                  */
                 
-                //Declare Variables
-                int UsrNum, //holds number entered by user.
-                    Sum = 0; //holds sum of incremented numbers.
+                 //Declare Variables
+                int Num = 0;    //holds integer input.
+                int Large = 0;  //holds largest integer.
+                int Small = 0;  //holds smallest integer.
+    
+                //Intro with instructions.
+                cout << "Enter as many integers a you like. After you enter your last\n"
+                        "integer, enter -99. Then the smallest and largest will be\n"
+                        "displayed.\n\n";
+    
+                //loop for getting multiple integers.
+                do
+                {   //input value.
+                    cout << "Enter an integer: ";
+                    cin  >> Num; //get integer.
 
-                //Input values
-                cout << "This program provides the sum of all\n"
-                        "numbers from 1 to any positive integer.\n"
-                        "Entered a positive integer here: ";
-                cin  >> UsrNum; //get number from user.
+                    //Process by mapping inputs to outputs
+                    //*replace smallest number with new input if it is smaller and != -99.
+                    if (Num <= Small && Num != -99) 
+                        Small = Num;
+                    //*replace largest number with new input if it is larger and != -99.
+                    if (Num >= Large && Num != -99)
+                        Large = Num;
+                }
+                while (Num != -99);// entry of -99 stops loop.
 
-                //Input Validation
-                while (UsrNum < 0) //must be positive.
-                    {
-                        cout << "You must enter a positive integer.\n"
-                                "Please enter number 1 or greater: ";
-                        cin  >> UsrNum;
-                    }
 
-                //loop counter starts at 1. Increment until UsrNum reached.
-                for (int Count = 1; Count <= UsrNum; Count++)
-                {
-                    Sum += Count; //adds next increment to sum.
-                }   
+                //Output values
+                cout << "\nThe smallest integer entered was: " << Small << endl;
+                cout << "The largest integer entered was:  " << Large;
 
-                //Output the sum.
-                cout << "The sum is " << Sum; 
+
             break;
             }
             
