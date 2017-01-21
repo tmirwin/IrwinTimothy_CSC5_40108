@@ -9,6 +9,11 @@
             the user's guess is lower than the random number, the program 
             should display "Too low, try again." The program should use a loop
             that repeats until the user correctly guesses the random number.
+            
+           *Enhance the program that you wrote for Programming Challenge 20 so
+            it keeps count of the number of guesses that the user makes. When
+            the user correctly guesses the random number, the program should
+            display the number of guesses. 
  */
 
 //System Libraries
@@ -35,6 +40,7 @@ int main(int argc, char** argv)
     //Declare Variables
     int RNum;//random number
     int NumG;//user guess
+    int counter; //holds number of guesses.
     
     int seed = time(0); //get system time 
     
@@ -42,7 +48,7 @@ int main(int argc, char** argv)
     srand(seed); //seed the random number generator.
     
     //Input values
-     cout << "I'm thinking of a number from 1 to 25. Guess my number: \n";
+    cout << "I'm thinking of a number from 1 to 25. Guess my number: \n";
     cin  >> NumG; //get user guess.
     RNum = 1 + rand() % 25; //set random number range so not guessing forever.
     
@@ -53,17 +59,21 @@ int main(int argc, char** argv)
         {
             cout << "Too low, try again.\n";
             cin  >> NumG; //get new guess.
+            counter++; //increment guess.
         }
         
         else if (NumG > RNum) //while guess too high.
         {
             cout << "Too high, try again.\n";
-            cin  >> NumG; //get new guess.   
+            cin  >> NumG; //get new guess.
+            counter++; //increment guess.
         }
        
         if (NumG == RNum) //if guess is correct, end loop and display correct.
         {
-            cout << "You guessed the correct number.";
+            counter++; //increment last guess.
+            cout << "You guessed the correct number.\n";
+            cout << "It took you " << counter << " tries to guess my number."; 
         }
     }        
     
