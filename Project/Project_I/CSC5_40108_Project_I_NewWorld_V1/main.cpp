@@ -23,17 +23,15 @@
           mark.lehr@rcc.edu with subject:
           Lastname, Firstname - Project 1 - 40479 or 40108
  
-          I have always been a big fan of story lines and board games so I have
-          created this board game. It combines the use of dice for movement
-          throughout the game and a point system that once equal to or less than
-          zero will inform of loss. If you advance to the end of the game before
-          your points run out you will win.
- */
+          I have always been a big fan of role play and games with story lines
+          so this is what I have come up with.  */
+
  //System Libraries
 
-#include <iostream>
+#include <iostream>//input/output.
 #include <cstdlib> //for rand, srand.
 #include <ctime>   //time function.
+#include <string>  //string lib.
 
 using namespace std;
 
@@ -52,9 +50,9 @@ int main(int argc, char** argv)
 {
     //Declare Variables
     int const MIN_VAL = 1;
-    int const MAX_VAL = 2;
+    int const MAX_VAL = 6;
     int const MIN_BSP = 1;
-    int const MAX_BSP = 36;
+    int const MAX_BSP = 12;
     
     float     Crew = 10000.00;
     float     FftnPLs = 15/100;
@@ -62,8 +60,9 @@ int main(int argc, char** argv)
     
     int       Space = 1;
     int       Miles;
-    
     int Die; //holds value of die.
+    
+    char   chSP3;
     
     //Input values
     cout << "Welcome to ""New Earth"".\n";
@@ -76,8 +75,8 @@ int main(int argc, char** argv)
             "the way you will encounter dangers that could cause you\n"
             "to lose points and cause delays in reaching the end of\n"
             "the game.\n";
-    cout << "There are 36 spaces on the game board. If you reach space\n"
-            "36 you have won.\n";
+    cout << "There are 12 spaces on the game board. If you reach space\n"
+            "12 without loosing your whole crew you have won.\n";
    
           
     do
@@ -101,7 +100,6 @@ int main(int argc, char** argv)
             cout << "Radiation has killed one thousand crew members.\n";
             Crew = Crew - 1000;
             cout << "You only have " << Crew << " crew left.\n\n";
-            
             
             break;
         }
@@ -136,15 +134,48 @@ int main(int argc, char** argv)
                     cout << "Your crew has grown to " << Crew << ".\n";
                     cin.ignore();
                 }
-            }
             break;
         }
-        
-        
-    
-    
+        case 4:
+            {
+            cout <<"Gravity from an asteroid is pulling your ship at a faster"
+                   " rate.\n";
+            cout << "Stay in the gravitational pull and potentially get there "
+                    "faster or exit for safety?\n"
+                    "Type Y to stay or N to exit? ";
+            cin  >> chSP3;
+            
+            if (chSP3 == 'Y' || chSP3 == 'y')
+            {
+                cout << "Gravity has its consequences. A portion of your ship\n"
+                        "has been destroyed.\n"
+                        "Roll the dice to see how many crew members are lost.\n";
+                cin.ignore();
+                cin.ignore();
+                Die = (rand() % (MAX_VAL - MIN_VAL + 1)) + MIN_VAL;
+                cout << "\nYou rolled a " << Die << ".\n";
+                Loss = Die * 1000;
+                Crew -= Loss;
+                cout << "You only have " << Crew << " Crew Members left.\n";
+            }
+            else
+            {
+                cout << "Your crew is safe. Continue your journey.\n";
+                cin.ignore();
+            }
+            break;
+            }
+        case 5:
+        {
+            break;
+        }
+        case 6:
+        {
+            break;
+        }
     }
-    while (Space < MAX_BSP);    
+    }
+    while (Space < MAX_BSP || Crew >= 1);    
 
     //Exit stage right!
 
